@@ -1,0 +1,49 @@
+<div class="card">
+  <div class="card-header">
+      <div class="float-left">
+          <h4>Pessoas</h4>
+      </div>
+      <div class="float-right">
+          <button type="button" class="btn btn-primary"  [routerLink]="['novo']">Nova Pessoa</button>
+          {{' '}}
+          <button type="button" class="btn btn-secondary" (click)="onRefresh()">Atualizar</button>
+      </div>
+  </div>
+  <div class="card-body">
+     <table class="table table-hover" *ngIf="pessoas$ | async as pessoas; else loadingError">
+       <thead>
+         <tr>
+           <th>#</th>
+           <th>Pessoa</th>
+           <th></th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let pessoa of pessoas">
+           <td>{{pessoa.codigo}}</td>
+           <td>{{pessoa.nome}}</td>
+           <td>
+             <span class="float-right">
+               <button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEdit(pessoa.codigo)">
+                 Detalhe
+               </button>
+               {{' '}}
+               <button class="btn btn-outline-danger mb-1 btn-sm" (click)="onDelete(pessoa)">
+                  Remover
+                </button>
+             </span>
+           </td>
+         </tr>
+       </tbody>
+     </table>
+
+     <ng-template #loadingError>
+        <div *ngIf="error$ | async; else loading">
+          Erro ao carregar pessoas. Tente novamente mais tarde.
+        </div>
+        <ng-template #loading>
+          <span>Carregando Pessoas...</span>
+        </ng-template>
+     </ng-template>
+  </div>
+</div>

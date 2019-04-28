@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-header">
+    <div class="float-left">
+      <h4>Pessoa</h4>
+    </div>
+    <div class="float-right">
+      <button type="button" class="btn btn-secondary" (click)="onCancel()">Voltar</button>
+    </div>
+  </div>
+</div>
+<form class="needs-validation" novalidate [formGroup]="form" style="padding-top: 10px; padding-left: 20px">
+  <div class="form-row">
+    <div class="col-sm-10">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" id="nome" 
+      placeholder="Nome" formControlName="nome"
+      readonly="true" />
+    </div>
+    <div class="col-sm-10">
+      <label for="street">Rua</label>
+      <input type="text" class="form-control" id="street" placeholder="Rua" formControlName="street" readonly="true"  />
+    </div>
+    <div class="col-sm-3">
+      <label for="number">Número</label>
+      <input type="text" class="form-control" id="number" placeholder="Número" formControlName="number" readonly="true" />
+    </div>
+    <div class="col-sm-3">
+      <label for="bairro">Bairro</label>
+      <input type="text" class="form-control" id="bairro" placeholder="Bairro" formControlName="bairro" readonly="true" />
+    </div>
+    <div class="col-sm-3">
+      <label for="cidade">Cidade</label>
+      <input type="text" class="form-control" id="cidade" placeholder="Cidade" formControlName="cidade" readonly="true" />
+    </div>
+    <div class="col-sm-1">
+      <label for="state">UF</label>
+      <input type="text" class="form-control" id="state" placeholder="UF" formControlName="state" readonly="true" />
+    </div>
+    <div class="col-sm-3">
+      <label for="celefone">Celular</label>
+      <input type="text" class="form-control" id="celefone" placeholder="Celular" formControlName="celefone" readonly="true" />
+    </div>
+    <div class="col-sm-3">
+      <label for="telefone">Telefone</label>
+      <input type="text" class="form-control" id="telefone" placeholder="Telefone" formControlName="telefone" readonly="true" />
+    </div>
+  </div>
+</form>
